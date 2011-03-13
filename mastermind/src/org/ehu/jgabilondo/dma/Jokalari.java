@@ -2,7 +2,9 @@ package org.ehu.jgabilondo.dma;
 
 import java.util.Scanner;
 
-public class Jokalari {
+import org.ehu.jgabilondo.generic.Ordenagarri;
+
+public class Jokalari extends Ordenagarri{
 	
 	private String izena;
 	private long puntuak;
@@ -33,6 +35,34 @@ public class Jokalari {
 	public void setPuntuak(long puntuak) {
 		this.puntuak = puntuak;
 	}
+
+	@Override
+	public boolean berdin(Ordenagarri bestea) {
+		// TODO Auto-generated method stub
+		if (this.puntuak == ((Jokalari)bestea).puntuak)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public boolean handiago(Ordenagarri bestea) {
+		// TODO Auto-generated method stub
+		if (this.puntuak > ((Jokalari)bestea).puntuak)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public boolean txikiago(Ordenagarri bestea) {
+		// TODO Auto-generated method stub
+		if (this.puntuak < ((Jokalari)bestea).puntuak)
+			return true;
+		else
+			return false;
+	}
+
 
 	
 	
