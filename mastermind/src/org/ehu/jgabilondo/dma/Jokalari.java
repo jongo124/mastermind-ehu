@@ -19,6 +19,10 @@ public class Jokalari extends Ordenagarri{
 			this.izena = fitxategia.next();
 		}
 	}
+	
+	public void pantailaratu(){
+		System.out.println(this.izena + ": " + this.puntuak + " puntu");
+	}
 
 	public String getIzena() {
 		return izena;
