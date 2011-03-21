@@ -33,8 +33,8 @@ public class ListaGenerikoa <Osagai extends Ordenagarri>{
 		return o;
 	}
 	
-	public int ZenbatOsagai(Osagai o){
-		int osagaiKop = v.size();
+	public int ZenbatOsagai(){
+		int osagaiKop = this.v.size();
 		return osagaiKop;
 	}
 	

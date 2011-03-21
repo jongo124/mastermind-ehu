@@ -12,6 +12,9 @@ public class Jokaldi extends Ordenagarri{
 		// TODO Auto-generated constructor stub
 	}
 
+	public void idatziJokaldia(){
+		System.out.println(this.zenbakia + ": " + this.emaitza.getHilKopurua() + " hil; " + this.emaitza.getZaurituKopurua() + " zauritu.");
+	}
 	public Zenbaki getZenbakia() {
 		return zenbakia;
 	}
