@@ -10,10 +10,12 @@ public class Jokaldi extends Ordenagarri{
 	
 	public Jokaldi() {
 		// TODO Auto-generated constructor stub
+		zenbakia = new Zenbaki();
+		emaitza = new Emaitza();
 	}
 
 	public void idatziJokaldia(){
-		System.out.println(this.zenbakia + ": " + this.emaitza.getHilKopurua() + " hil; " + this.emaitza.getZaurituKopurua() + " zauritu.");
+		System.out.println(this.zenbakia.getZenbakia() + ": " + this.emaitza.getHilKopurua() + " hil; " + this.emaitza.getZaurituKopurua() + " zauritu.");
 	}
 	public Zenbaki getZenbakia() {
 		return zenbakia;
