@@ -18,19 +18,12 @@ public class Mastermind {
 	public static void main(String[] args) throws IOException {
 		int jokaldiKopurua;
 		int i = 1;
+		int j = 0;
 		long hasiera, bukaera, denbora, puntuazioa;
 		Calendar egutegia;
 		Emaitza jokaldikoEmaitza = new Emaitza();
 		// TODO Auto-generated method stub
-		/*JokalariLista.hasieratu();
-		JokalariLista.bistaratu();
 		
-		Jokalari jokalari = new Jokalari();
-		jokalari.setIzena("Jon Kepa");
-		jokalari.setPuntuak(12345);
-		JokalariLista.gorde(jokalari);
-		System.out.println("---------Jokoa bukatu ostean-------------");
-		JokalariLista.bistaratu();*/
 		JokoSaioa.hasieratu();
 		jokaldiKopurua = JokoSaioa.getZifraKopurua()*5;
 		puntuazioa = JokoSaioa.getZifraKopurua()*10000;
@@ -57,7 +50,14 @@ public class Mastermind {
 		System.out.println(denbora+" s eman dituzu jokoan gustira.");
 		System.out.println("\nHona hemen egin dituzun jokaldiak eta beren emaitzak:\n");
 		JokaldiLista.bistaratu();
+		Jokalari jokalari = new Jokalari();
+		jokalari.setIzena(JokoSaioa.getJokalariIzena());
+		jokalari.setPuntuak(puntuazioa);
+		JokalariLista.hasieratu();
+		JokalariLista.jokalariaGehitu(jokalari);
 		System.out.println("\nHauek dira orain arteko 10 jokalaririk onenak:\n");
+		JokalariLista.bistaratu();
+		JokalariLista.gorde();
 		System.out.println("AMAIERA");
 	}
 
