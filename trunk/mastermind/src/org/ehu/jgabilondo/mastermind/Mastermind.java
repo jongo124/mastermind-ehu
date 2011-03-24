@@ -47,7 +47,7 @@ public class Mastermind {
 			puntuazioa = (puntuazioa - ((i-1)*10)) / denbora;
 		}
 		System.out.println("Lortutako puntuazioa: "+puntuazioa);
-		System.out.println(denbora+" s eman dituzu jokoan gustira.");
+		System.out.println(denbora+" s eman dituzu jokoan guztira.");
 		System.out.println("\nHona hemen egin dituzun jokaldiak eta beren emaitzak:\n");
 		JokaldiLista.bistaratu();
 		Jokalari jokalari = new Jokalari();

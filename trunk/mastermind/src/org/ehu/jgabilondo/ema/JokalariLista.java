@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 import org.ehu.jgabilondo.dma.Jokalari;
@@ -16,7 +15,7 @@ public class JokalariLista{
 	//LINUX EHU
 	//private static final String FITXATEGIA = "/docencia/cuentas/j/jgabilondo003/BILDU/PMOO/entregak/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
 	//MAC
-	private static final String FITXATEGIA = "/Users/JGabiMark/Documents/Programming/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
+	private static final String FITXATEGIA = "froga.txt";
 	private static Scanner fitxategia;
 
 	private static ListaGenerikoa<Jokalari> jokalariLista;
@@ -38,14 +37,11 @@ public class JokalariLista{
 		
 	}
 	public static void gorde() throws IOException{
-		//PrintWriter pw = new PrintWriter(new FileWriter(FITXATEGIA));
 		BufferedWriter bw = new BufferedWriter(new FileWriter(FITXATEGIA));
 		for (int i=0;i<jokalariLista.ZenbatOsagai();i++){
-			System.out.println("JOKALARILISTA.GORDE: "+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
-			//pw.println( ((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
-			bw.write(((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
+			bw.write(((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena()+"\n");
 		}
-		fitxategia.close();	
+		bw.close();	
 		
 	}
 	
