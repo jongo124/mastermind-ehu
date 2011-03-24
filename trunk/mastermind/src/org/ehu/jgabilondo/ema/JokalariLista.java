@@ -1,6 +1,7 @@
 package org.ehu.jgabilondo.ema;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -37,11 +38,12 @@ public class JokalariLista{
 		
 	}
 	public static void gorde() throws IOException{
-		PrintWriter pw = new PrintWriter(new FileWriter(FITXATEGIA));
-
+		//PrintWriter pw = new PrintWriter(new FileWriter(FITXATEGIA));
+		BufferedWriter bw = new BufferedWriter(new FileWriter(FITXATEGIA));
 		for (int i=0;i<jokalariLista.ZenbatOsagai();i++){
 			System.out.println("JOKALARILISTA.GORDE: "+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
-			pw.println( ((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
+			//pw.println( ((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
+			bw.write(((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
 		}
 		fitxategia.close();	
 		
