@@ -3,6 +3,8 @@ package org.ehu.jgabilondo.froga;
 import java.util.Scanner;
 import java.io.*;
 
+import org.ehu.jgabilondo.dma.Jokalari;
+import org.ehu.jgabilondo.ema.JokalariLista;
 import org.ehu.jgabilondo.ema.ZenbakiMakina;
 
 public class Froga {
@@ -17,7 +19,7 @@ public class Froga {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Scanner fitxategia;
+		/*Scanner fitxategia;
 
 		fitxategia = new Scanner(new BufferedReader(new FileReader(JOKALARI_FITXATEGIA)));
 		fitxategia.useDelimiter("[/\\s]");
@@ -27,7 +29,21 @@ public class Froga {
 		}
 		
 		ZenbakiMakina.hasieratu(4);
-		System.out.println(ZenbakiMakina.ezkutua().getZenbakia());
+		System.out.println(ZenbakiMakina.ezkutua().getZenbakia());*/
+		JokalariLista.hasieratu();
+		JokalariLista.bistaratu();
+		
+		Jokalari jokalari = new Jokalari();
+		jokalari.setIzena("Jon Kepa");
+		jokalari.setPuntuak(12345);
+		try {
+			JokalariLista.gorde();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("---------Jokoa bukatu ostean-------------");
+		JokalariLista.bistaratu();
 	}
 
 }

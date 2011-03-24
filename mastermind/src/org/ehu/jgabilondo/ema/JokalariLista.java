@@ -36,10 +36,9 @@ public class JokalariLista{
 		fitxategia.close();
 		
 	}
-	public static void gorde(Jokalari j) throws IOException{
+	public static void gorde() throws IOException{
 		PrintWriter pw = new PrintWriter(new FileWriter(FITXATEGIA));
 
-		jokalariLista.Kokatu(j);
 		for (int i=0;i<jokalariLista.ZenbatOsagai();i++){
 			System.out.println("JOKALARILISTA.GORDE: "+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
 			pw.println( ((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getPuntuak()+"/"+((Jokalari)jokalariLista.OsagaiaPosizioan(i)).getIzena());
@@ -49,8 +48,11 @@ public class JokalariLista{
 	}
 	
 	public static void bistaratu(){
-		for(int i=0;i<jokalariLista.ZenbatOsagai();i++)
+		int i = 0;
+		while (i<jokalariLista.ZenbatOsagai() && i<10){
 			((Jokalari)jokalariLista.OsagaiaPosizioan(i)).pantailaratu();
+			i++;
+		}
 	}
 	
 	public static void jokalariaGehitu(Jokalari j){
