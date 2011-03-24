@@ -4,13 +4,13 @@ import java.util.Vector;
 
 public class ListaGenerikoa <Osagai extends Ordenagarri>{
 
-	Vector v;
+	Vector<Osagai> v;
 	Boolean goranzkoOrdena;
 	
 	
 	public ListaGenerikoa(Boolean goranzkoOrdena) {
 		this.goranzkoOrdena = goranzkoOrdena;
-		v = new Vector();
+		v = new Vector<Osagai>();
 	}
 
 	public void Kokatu(Osagai o){
