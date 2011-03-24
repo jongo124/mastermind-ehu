@@ -14,10 +14,8 @@ public class Jokalari extends Ordenagarri{
 	}
 	
 	public void irakurri(Scanner fitxategia){
-		if (fitxategia.hasNext()){
 			this.puntuak = fitxategia.nextInt();
 			this.izena = fitxategia.next();
-		}
 	}
 	
 	public void pantailaratu(){

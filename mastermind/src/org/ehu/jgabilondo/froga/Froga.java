@@ -3,6 +3,8 @@ package org.ehu.jgabilondo.froga;
 import java.util.Scanner;
 import java.io.*;
 
+import org.ehu.jgabilondo.ema.ZenbakiMakina;
+
 public class Froga {
 	//LINUX EHU
 	//private static final String JOKALARI_FITXATEGIA = "/docencia/cuentas/j/jgabilondo003/BILDU/PMOO/entregak/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
@@ -23,6 +25,9 @@ public class Froga {
 			System.out.println(fitxategia.nextInt());
 			System.out.println(fitxategia.next());
 		}
+		
+		ZenbakiMakina.hasieratu(4);
+		System.out.println(ZenbakiMakina.ezkutua().getZenbakia());
 	}
 
 }

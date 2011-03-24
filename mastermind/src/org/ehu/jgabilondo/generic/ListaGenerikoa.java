@@ -15,16 +15,20 @@ public class ListaGenerikoa <Osagai extends Ordenagarri>{
 
 	public void Kokatu(Osagai o){
 		int i = 0;
-		if (goranzkoOrdena){
-			//gorantza ordenatu
-			while ( o.handiago((Osagai)v.elementAt(i)) && i<=v.size() )
-				i++;
-			v.insertElementAt(o, i);
-		}else{
-			//beherantz ordenatu
-			while ( o.txikiago((Osagai)v.elementAt(i)) && i<=v.size() )
-				i++;
-			v.insertElementAt(o, i);
+		if (v.size()==0)
+			v.add(o);
+		else{
+			if (goranzkoOrdena){
+				//gorantza ordenatu
+				while ( i<v.size() && o.handiago((Osagai)v.elementAt(i)) )
+					i++;
+				v.insertElementAt(o, i);
+			}else{
+				//beherantz ordenatu
+				while ( i<v.size() && o.txikiago((Osagai)v.elementAt(i))  )
+					i++;
+				v.insertElementAt(o, i);
+			}
 		}
 	}
 	
