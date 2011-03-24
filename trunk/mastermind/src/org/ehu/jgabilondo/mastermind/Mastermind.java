@@ -18,7 +18,6 @@ public class Mastermind {
 	public static void main(String[] args) throws IOException {
 		int jokaldiKopurua;
 		int i = 1;
-		int j = 0;
 		long hasiera, bukaera, denbora, puntuazioa;
 		Calendar egutegia;
 		Emaitza jokaldikoEmaitza = new Emaitza();

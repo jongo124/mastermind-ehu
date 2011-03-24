@@ -15,7 +15,7 @@ public class JokalariLista{
 	//LINUX EHU
 	//private static final String FITXATEGIA = "/docencia/cuentas/j/jgabilondo003/BILDU/PMOO/entregak/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
 	//MAC
-	private static final String FITXATEGIA = "froga.txt";
+	private static final String FITXATEGIA = "/Users/JGabiMark/Documents/Programming/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
 	private static Scanner fitxategia;
 
 	private static ListaGenerikoa<Jokalari> jokalariLista;
