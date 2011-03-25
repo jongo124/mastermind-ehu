@@ -1,7 +1,5 @@
 package org.ehu.jgabilondo.dma;
 
-import org.ehu.jgabilondo.ema.JokoSaioa;
-
 public class Zenbaki {
 	
 	private String zenbakia = "";
@@ -20,21 +18,6 @@ public class Zenbaki {
 
 	public Emaitza konparatu(Zenbaki bestea){
 		Emaitza emaitza = new Emaitza(0,0);
-		//Begiratu ea behar diren zifrak baino gehiago sartu duten
-		if(bestea.zenbakia.length()!=this.zenbakia.length()){
-			System.out.print("Zenbakiak "+JokoSaioa.getZifraKopurua()+" zifra izan behar ditu: jokaldi hau ez da kontuan hartuko!");
-			return null;
-		}
-		
-		//Zenbakiak errepikatuta dauden begiratu
-		for (int k=0;k<bestea.zenbakia.length();k++){
-			for(int l=k+1;l<bestea.zenbakia.length();l++){
-				if (bestea.zenbakia.charAt(k)==bestea.zenbakia.charAt(l)){
-					System.out.print("Ez da zifra errepikatudun zenbakirik onartzen: jokaldi hau ez da kontuan hartuko!");
-					return null;
-				}
-			}
-		}
 			
 		//Hildakoak eta zaurituak
 		for (int i=0; i<this.zenbakia.length();i++){
