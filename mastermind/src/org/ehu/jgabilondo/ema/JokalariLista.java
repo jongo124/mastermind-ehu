@@ -2,6 +2,7 @@ package org.ehu.jgabilondo.ema;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,7 +16,7 @@ public class JokalariLista{
 	//LINUX EHU
 	//private static final String FITXATEGIA = "/docencia/cuentas/j/jgabilondo003/BILDU/PMOO/entregak/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
 	//MAC
-	private static final String FITXATEGIA = "/Users/JGabiMark/Documents/Programming/mastermind/mastermind/src/org/ehu/jgabilondo/froga/froga.txt";
+	private static final String FITXATEGIA = "jokalariak.txt";
 	private static Scanner fitxategia;
 
 	private static ListaGenerikoa<Jokalari> jokalariLista;
@@ -23,8 +24,22 @@ public class JokalariLista{
 	private JokalariLista() {
 		// TODO Auto-generated constructor stub
 	}
-	public static void hasieratu() throws FileNotFoundException{
-		 fitxategia = new Scanner(new BufferedReader(new FileReader(FITXATEGIA)));
+	public static void hasieratu(){
+		try {
+			fitxategia = new Scanner(new BufferedReader(new FileReader(FITXATEGIA)));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Fitxategia ez da aurkitu. \"jokalariak.txt\" fitxategia sortuko da.");
+			File fitxategia_sortu = new File("jokalariak.txt");
+			try {
+				fitxategia_sortu.createNewFile();
+				fitxategia = new Scanner(new BufferedReader(new FileReader("jokalariak.txt")));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				System.out.println("Fitxategia ezin izan da sortu. Programa amaituko da.");
+				System.exit(0);
+			}
+		}
 		jokalariLista = new ListaGenerikoa<Jokalari>(false);
 		Jokalari jokalari;
 		fitxategia.useDelimiter("[/\\s]");
