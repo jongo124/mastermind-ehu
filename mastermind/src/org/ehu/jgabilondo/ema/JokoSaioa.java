@@ -20,26 +20,25 @@ public class JokoSaioa {
 	}
 
 	public static void hasieratu() throws IOException{
-		try{
+		
 			int sarrera;
 			boolean ongiIrakurrita = false;
 			System.out.println("Sartu zure izena:");
 			jokalariIzena = br.readLine();
-			System.out.println("Zenbat zifrako zenbakiekin jokatu nahi duzu (4-6):");
-			sarrera = Integer.parseInt(br.readLine());
-			while (!ongiIrakurrita){
-				if(sarrera>=KOP_MIN && sarrera<=KOP_MAX){
-					zifraKopurua = sarrera;
-					ongiIrakurrita = true;
+			
+				while (!ongiIrakurrita){
+					try{
+						System.out.println("Zenbat zifrako zenbakiekin jokatu nahi duzu (4-6):");
+						sarrera = Integer.parseInt(br.readLine());
+						ongiIrakurrita = zifraKopuruaOngiIrakurrita(sarrera);
+			
+					}catch(Exception e){
+						System.out.println("Zifra aukerak 4, 5 edo 6 dira. Ezin da karaktererik sartu.");
+					}
 				}
-				else{
-					System.out.println("Zifra aukerak 4, 5 edo 6 dira. Idatzi berriz zenbat zifrako zenbakiekin jokatu nahi duzun:");
-					sarrera = Integer.parseInt(br.readLine());
-				}
-			}
+				
 			System.out.println("Listo! Has zintezke jokatzen, zenbaki ezkutua aurkitu arte.");
 			System.out.println((zifraKopurua*5)+" jokaldi egin ditzakezu gehienez. ZORTE ON!");
-		}catch(Exception e){e.printStackTrace();}
 		
 		ZenbakiMakina.hasieratu(zifraKopurua);
 		JokaldiLista.hasieratu();
@@ -51,8 +50,13 @@ public class JokoSaioa {
 		Emaitza emaitza = null;
 		boolean sarreraOngi = false;
 		while (!sarreraOngi){
-			System.out.println("Sartu zenbaki bat");
-			zenbakia.setZenbakia(br.readLine());
+			System.out.println("Sartu zenbaki bat:");
+			try{
+				zenbakia.setZenbakia(br.readLine());
+			}catch(Exception e){
+				System.out.println("Teklatutik irakurtzerakoan errore bat izan da. Jokaldi hau ez da kontuan hartuko. Sartu zenbaki bat:");
+				zenbakia.setZenbakia(br.readLine());
+			}
 			sarreraOngi = sarreraOna(zenbakia);
 		}
 		emaitza = ZenbakiMakina.ezkutuarekinKonparatu(zenbakia);
@@ -97,6 +101,16 @@ public class JokoSaioa {
 					return false;
 				}
 			}
+		}
+		return true;
+	}
+	
+	private static boolean zifraKopuruaOngiIrakurrita(int sarrera){
+		if(sarrera>=KOP_MIN && sarrera<=KOP_MAX)
+			zifraKopurua = sarrera;
+		else{
+			System.out.println("Zifra aukerak 4, 5 edo 6 dira.");
+			return false;
 		}
 		return true;
 	}
