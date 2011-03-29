@@ -23,14 +23,24 @@ public class Mastermind {
 		Emaitza jokaldikoEmaitza = new Emaitza();
 		// TODO Auto-generated method stub
 		
-		JokoSaioa.hasieratu();
+		try{
+			JokoSaioa.hasieratu();
+		}catch(IOException e){
+			System.err.println("Izena irakurtzerakoan errore bat gertatu da.");
+			JokoSaioa.hasieratu();
+		}
 		jokaldiKopurua = JokoSaioa.getZifraKopurua()*5;
 		puntuazioa = JokoSaioa.getZifraKopurua()*10000;
 		System.out.println(ZenbakiMakina.ezkutua().getZenbakia());
 		egutegia = Calendar.getInstance();
 		hasiera = egutegia.getTimeInMillis();
 		while (i<=jokaldiKopurua && jokaldikoEmaitza.getHilKopurua()!=JokoSaioa.getZifraKopurua()){
+			try{
 			jokaldikoEmaitza = JokoSaioa.jokaldiaEgin(i);
+			}catch(IOException e){
+				System.out.println("Teklatutik irakurtzerakoan errore bat izan da. Jokaldi hau ez da kontuan hartuko.");
+				jokaldikoEmaitza = JokoSaioa.jokaldiaEgin(i);
+			}
 			i++;
 		}
 		egutegia = Calendar.getInstance();
@@ -56,7 +66,11 @@ public class Mastermind {
 		JokalariLista.jokalariaGehitu(jokalari);
 		System.out.println("\nHauek dira orain arteko 10 jokalaririk onenak:\n");
 		JokalariLista.bistaratu();
-		JokalariLista.gorde();
+		try{
+			JokalariLista.gorde();
+		}catch(IOException e){
+			System.out.println("Ezin izan da puntuazioa gorde.");
+		}
 		System.out.println("AMAIERA");
 	}
 
