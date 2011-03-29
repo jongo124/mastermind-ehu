@@ -29,14 +29,14 @@ public class JokalariLista{
 			fitxategia = new Scanner(new BufferedReader(new FileReader(FITXATEGIA)));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.err.println("Fitxategia ez da aurkitu. \"jokalariak.txt\" fitxategia sortuko da.");
+			System.err.println("\nFitxategia ez da aurkitu. \"jokalariak.txt\" fitxategia sortuko da.");
 			File fitxategia_sortu = new File("jokalariak.txt");
 			try {
 				fitxategia_sortu.createNewFile();
 				fitxategia = new Scanner(new BufferedReader(new FileReader("jokalariak.txt")));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
-				System.out.println("Fitxategia ezin izan da sortu. Programa amaituko da.");
+				System.out.println("\nFitxategia ezin izan da sortu. Programa amaituko da.");
 				System.exit(0);
 			}
 		}
