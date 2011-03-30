@@ -31,7 +31,7 @@ public class Mastermind {
 		}
 		jokaldiKopurua = JokoSaioa.getZifraKopurua()*5;
 		puntuazioa = JokoSaioa.getZifraKopurua()*10000;
-		System.out.println(ZenbakiMakina.ezkutua().getZenbakia());
+		//System.out.println(ZenbakiMakina.ezkutua().getZenbakia());
 		egutegia = Calendar.getInstance();
 		hasiera = egutegia.getTimeInMillis();
 		while (i<=jokaldiKopurua && jokaldikoEmaitza.getHilKopurua()!=JokoSaioa.getZifraKopurua()){
@@ -71,7 +71,6 @@ public class Mastermind {
 		}catch(IOException e){
 			System.out.println("Ezin izan da puntuazioa gorde.");
 		}
-		System.out.println("AMAIERA");
 	}
 
 }
